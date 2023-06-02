@@ -2,7 +2,7 @@ import React , {useState , useEffect} from 'react'
 import edit_btn from '../icons/edit_btn.svg'
 import adding from '../icons/adding.svg'
 import x_marque from '../icons/x_marque.svg'
-import axios from '../axios'
+import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
 import trash from '../icons/trash.svg'
 

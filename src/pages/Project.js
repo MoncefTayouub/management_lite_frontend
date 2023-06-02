@@ -5,7 +5,7 @@ import left_arrow from '../icons/left_arrow.svg'
 import {useParams } from "react-router-dom"
 import x_marque from '../icons/x_marque.svg'
 import trash from '../icons/trash.svg'
-import axios from '../axios'
+import axios from 'axios'
 
 function Project() {
     const params = useParams() ;
