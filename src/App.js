@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Project from './pages/Project';
 function App() {
-  backend_url = 'moncef980.pythonanywhere.com/'
+  var backend_url = 'moncef980.pythonanywhere.com/'
   return (
     <div className="App">
            <BrowserRouter>
