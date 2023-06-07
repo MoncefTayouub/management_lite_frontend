@@ -6,7 +6,7 @@ import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
 import trash from '../icons/trash.svg'
 
-function Home() {
+function Home({backend_url}) {
   const [data , setDate] = useState()
   const navigate = useNavigate();
   const [update , setUpdate] = useState(false)
@@ -18,7 +18,7 @@ function Home() {
   },[update])    
   let getData = async () => {
 
-    let respons = await fetch (`http://127.0.0.1:8000/project`)
+    let respons = await fetch (`${backend_url}project`)
     let data = await respons.json()
     setDate(data)
 
@@ -41,7 +41,7 @@ function Home() {
 
     await axios ({
       method : method , 
-      url : 'http://127.0.0.1:8000/project' ,
+      url : `${backend_url}project` ,
       data :  DataForm
   })
   .then((response)=>{
@@ -76,7 +76,7 @@ function Home() {
         
         await axios ({
           method : method , 
-          url : 'http://127.0.0.1:8000/project' ,
+          url : `${backend_url}project` ,
           data :  DataForm
       })
       .then((response)=>{

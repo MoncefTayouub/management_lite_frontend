@@ -7,7 +7,7 @@ import x_marque from '../icons/x_marque.svg'
 import trash from '../icons/trash.svg'
 import axios from 'axios'
 
-function Project() {
+function Project({backend_url}) {
     const params = useParams() ;
     const [data , setDate] = useState()
     const project_id = params.id
@@ -22,7 +22,7 @@ function Project() {
       },[update])    
       let getData = async () => {
 
-        let respons = await fetch (`http://127.0.0.1:8000/task/${project_id}`)
+        let respons = await fetch (`${backend_url}/task/${project_id}`)
         let data = await respons.json()
         setDate(data)
         if (task_edit_index != -1 ) {
@@ -52,7 +52,7 @@ function Project() {
         }
         await axios ({
           method : method , 
-          url : 'http://127.0.0.1:8000/task/'+project_id ,
+          url : backend_url+'/task/'+project_id ,
           data :  DataForm
       })
       .then((response)=>{
@@ -107,7 +107,7 @@ function Project() {
         var method ='delete'     
         await axios ({
           method : method , 
-          url : 'http://127.0.0.1:8000/task/0' ,
+          url : backend_url+'/task/0' ,
           data :  DataForm
       })
       .then((response)=>{
@@ -131,7 +131,7 @@ function Project() {
         
         await axios ({
           method : method , 
-          url : 'http://127.0.0.1:8000/steps' ,
+          url : backend_url+'/steps' ,
           data :  DataForm
       })
       .then((response)=>{
@@ -186,7 +186,7 @@ function Project() {
         
         await axios ({
           method : method , 
-          url : 'http://127.0.0.1:8000/steps' ,
+          url : backend_url+'/steps' ,
           data :  DataForm
       })
       .then((response)=>{
@@ -212,7 +212,7 @@ function Project() {
       var method ='options'     
       await axios ({
         method : method , 
-        url : 'http://127.0.0.1:8000/steps' ,
+        url : backend_url+'/steps' ,
         data :  DataForm
     })
     .then((response)=>{
@@ -236,7 +236,7 @@ function Project() {
       var method ='delete'     
       await axios ({
         method : method , 
-        url : 'http://127.0.0.1:8000/steps' ,
+        url : backend_url+'/steps' ,
         data :  DataForm
     })
     .then((response)=>{

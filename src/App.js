@@ -5,12 +5,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Project from './pages/Project';
 function App() {
+  backend_url = 'moncef980.pythonanywhere.com/'
   return (
     <div className="App">
            <BrowserRouter>
               <Routes>
-                    <Route path="/" element={<Home    />} />    
-                    <Route path="/Project/:id" element={<Project    />} />    
+                    <Route path="/" element={<Home  backend_url={backend_url}  />} />    
+                    <Route path="/Project/:id" element={<Project  backend_url={backend_url}  />} />    
                 </Routes>
           </BrowserRouter>
     </div>
