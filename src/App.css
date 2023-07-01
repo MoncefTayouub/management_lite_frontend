@@ -203,7 +203,8 @@ body .Project .task .taskname {
   width: 50%;
   height: 100%;
   box-sizing: border-box;
-  font-size: 24px;
+  font-size: 16px;
+  justify-content: flex-start;
 }
 body .Project .task .taskname img {
   margin-left: 20px;
